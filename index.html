@@ -76,9 +76,14 @@
       width: 50%;
     }
 
+    .img {
+    max-width: 100%;
+    height: auto; 
+    }
+
+
     /* Clear floats after the columns */
     .row::after {
-      content: "";
       display: table;
       clear: both;
     }
@@ -87,7 +92,7 @@
 
 
     /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 200px) {
+    @media screen and (max-width: 600px) {
 
       .column.side,
       .column.middle {
@@ -102,7 +107,44 @@
       padding: 10px;
       text-align: center;
     }
+    .container {
+   display: flex;
+   flex-wrap: wrap;
+}
+ 
+.box {
+   min-height: 150px;
+   width: 100%;
+}
+ 
+/*untuk layar device berukuran kecil*/
+@media screen and (min-width: 450px) {
+   .light_blue, .green {
+       width: 50%
+   }
+}
+ 
+/*untuk layar device berukuran sedang*/
+@media screen and (min-width: 550px) {
+   .red {
+       width: 33%;
+   }
+ 
+   .orange {
+       width: 67%;
+   }
+}
+ 
+/*untuk layar device berukuran besar*/
+@media screen and (min-width: 800px) {
+   .container {
+       width: 800px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+}
 
+  
     
 
   </style>
@@ -187,20 +229,12 @@
         Hebatnya lagi, sejak 2010 Juicy Luicy berhasil mempertahankan eksistensi mereka. Nggak hanya itu saja, beberapa
         lagu mereka sering masuk ke daftar lagu yang paling banyak didengarkan di Spotify sejak tahun 2021 dan 2022.
         Pencapaian in jelas berarti banget, karena lagu-lagu Juicy Luicy diterima dengan baik oleh pendengar musik di
-        Indonesia yang selama ini cenderung lebih suka genre pop dan rock. 
-
-
-
-        Salah satu lagu Juicy Luicy yang paling populer adalah Lantas, dirilis tahun 2020. Lagu ini kemudian viral
-        banget di TikTok dan banyak didengarkan di Spotify. Selain itu, beberapa lagu terbaik mereka antara lain ada Aku
-        Cinta Dia yang Cinta Pacarnya (2016), Tanpa Tergesa (2018), Lagu Nikah (2020) dan H-5 (2021). 
-
-      </p>
+        Indonesia yang selama ini cenderung lebih suka genre pop dan rock.</p>
     </div>
 
     <div class="column middle">
       <p style="text-align: center;">
-        <img src="JuicyLuicy.jpg" alt="1">
+        <img class="img" src="JuicyLuicy.jpg">
       </p>
     </div>
 
