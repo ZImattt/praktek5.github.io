@@ -346,28 +346,35 @@
         }
 
         .member-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary);
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: var(--secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
+            margin: 0 auto 25px;
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover .member-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
         }
 
         .member-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 10px;
+            color: var(--primary);
         }
 
         .member-card p {
             color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         .member-social {
@@ -378,11 +385,13 @@
 
         .member-social a {
             color: var(--text-light);
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
         }
 
         .member-social a:hover {
             color: var(--primary);
+            transform: translateY(-3px);
         }
 
         /* Footer */
@@ -535,6 +544,10 @@
             .albums-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .members-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
         }
 
         @media (max-width: 480px) {
@@ -549,6 +562,22 @@
             .hero-content h2 {
                 font-size: 2.2rem;
             }
+            
+            .member-card {
+                padding: 30px 20px;
+            }
+            
+            .member-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+        }
+
+        /* Image Quality Improvement */
+        .album-image {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
         }
     </style>
 </head>
@@ -602,7 +631,10 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="JuicyLuicy.jpg" alt="Juicy Luicy Band" id="hero-img">
+                <!-- High quality band photo -->
+                <img src="https://i.ytimg.com/vi/qmgA_WejI8w/maxresdefault.jpg" 
+                     alt="Juicy Luicy Band" 
+                     id="hero-img">
             </div>
         </div>
     </section>
@@ -616,7 +648,10 @@
             </div>
             <div class="albums-grid">
                 <div class="album-card" data-year="2024">
-                    <img src="tampar.jpg" alt="Tampar" class="album-image">
+                    <!-- YouTube thumbnail for Tampar -->
+                    <img src="https://i.ytimg.com/vi/qmgA_WejI8w/maxresdefault.jpg" 
+                         alt="Tampar - Single Cover" 
+                         class="album-image">
                     <div class="album-info">
                         <h3>Tampar</h3>
                         <p>Single terbaru yang penuh dengan energi dan lirik yang menyentuh</p>
@@ -624,7 +659,10 @@
                     </div>
                 </div>
                 <div class="album-card" data-year="2020">
-                    <img src="lantas.jpg" alt="Lantas" class="album-image">
+                    <!-- YouTube thumbnail for Lantas -->
+                    <img src="https://i.ytimg.com/vi/ba-XAIskH_g/maxresdefault.jpg" 
+                         alt="Lantas - Single Cover" 
+                         class="album-image">
                     <div class="album-info">
                         <h3>Lantas</h3>
                         <p>Lagu yang berhasil menembus chart Spotify Indonesia</p>
@@ -632,7 +670,10 @@
                     </div>
                 </div>
                 <div class="album-card" data-year="2020">
-                    <img src="jemari.jpg" alt="Jemari" class="album-image">
+                    <!-- YouTube thumbnail for Jemari -->
+                    <img src="https://i.ytimg.com/vi/lN86YqB55zQ/maxresdefault.jpg" 
+                         alt="Jemari - Single Cover" 
+                         class="album-image">
                     <div class="album-info">
                         <h3>Jemari</h3>
                         <p>Harmoni indah yang memukau pendengar</p>
@@ -653,21 +694,30 @@
             <div class="videos-sidebar">
                 <div class="video-list">
                     <div class="video-item active" data-video="qmgA_WejI8w">
-                        <img src="tampar.jpg" alt="Tampar" class="video-thumb">
+                        <!-- YouTube thumbnail for Tampar -->
+                        <img src="https://i.ytimg.com/vi/qmgA_WejI8w/hqdefault.jpg" 
+                             alt="Tampar Music Video" 
+                             class="video-thumb">
                         <div class="video-item-info">
                             <h4>Tampar</h4>
                             <p>2024 • 3:45</p>
                         </div>
                     </div>
                     <div class="video-item" data-video="ba-XAIskH_g">
-                        <img src="lantas.jpg" alt="Lantas" class="video-thumb">
+                        <!-- YouTube thumbnail for Lantas -->
+                        <img src="https://i.ytimg.com/vi/ba-XAIskH_g/hqdefault.jpg" 
+                             alt="Lantas Music Video" 
+                             class="video-thumb">
                         <div class="video-item-info">
                             <h4>Lantas</h4>
                             <p>2020 • 4:12</p>
                         </div>
                     </div>
                     <div class="video-item" data-video="lN86YqB55zQ">
-                        <img src="jemari.jpg" alt="Jemari" class="video-thumb">
+                        <!-- YouTube thumbnail for Jemari -->
+                        <img src="https://i.ytimg.com/vi/lN86YqB55zQ/hqdefault.jpg" 
+                             alt="Jemari Music Video" 
+                             class="video-thumb">
                         <div class="video-item-info">
                             <h4>Jemari</h4>
                             <p>2020 • 3:58</p>
@@ -696,7 +746,7 @@
                     <h3>Julian Kaisar</h3>
                     <p>Vokal</p>
                     <div class="member-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/uan.kaisar/"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
@@ -707,18 +757,18 @@
                     <h3>Denis Ligia</h3>
                     <p>Gitar Elektrik</p>
                     <div class="member-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/denisligia/"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="member-card">
                     <div class="member-icon">
-                        <i class="fas fa-music"></i>
+                        <i class="fas fa-saxophone"></i>
                     </div>
                     <h3>Zamzam Y.M</h3>
                     <p>Saxophone & Gitar</p>
                     <div class="member-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/zamzamym/"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
@@ -729,7 +779,7 @@
                     <h3>Dwi Nugroho</h3>
                     <p>Drum</p>
                     <div class="member-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/dwinugroho/"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
@@ -740,7 +790,7 @@
                     <h3>Bina Bagja</h3>
                     <p>Bass</p>
                     <div class="member-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/binabagja/"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
@@ -766,16 +816,16 @@
                 <div class="footer-social">
                     <h4>Connect With Us</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-spotify"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://open.spotify.com/artist/"><i class="fab fa-spotify"></i></a>
+                        <a href="https://www.youtube.com/c/JuicyLuicy"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/juicyluicy/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/juicyluicyband"><i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com/JUICYLUICY"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Juicy Luicy. All rights reserved.</p>
+                <p>&copy; 2024 Juicy Luicy. All rights reserved. | morfem.info@gmail.com</p>
             </div>
         </div>
     </footer>
@@ -870,46 +920,17 @@
             });
         });
 
-        // Image loading with fallback
-        const heroImg = document.getElementById('hero-img');
-        heroImg.onerror = function() {
-            this.src = 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
-        };
-
-        // Add loading state for images
+        // Image loading optimization
         const images = document.querySelectorAll('img');
         images.forEach(img => {
             img.addEventListener('load', function() {
                 this.style.opacity = '1';
             });
             img.style.opacity = '0';
-            img.style.transition = 'opacity 0.3s ease';
+            img.style.transition = 'opacity 0.5s ease';
         });
 
-        // Keyboard navigation for videos
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-                e.preventDefault();
-                const activeVideo = document.querySelector('.video-item.active');
-                let nextVideo;
-                
-                if (e.key === 'ArrowDown') {
-                    nextVideo = activeVideo.nextElementSibling || videoItems[0];
-                } else {
-                    nextVideo = activeVideo.previousElementSibling || videoItems[videoItems.length - 1];
-                }
-                
-                if (nextVideo) {
-                    videoItems.forEach(video => video.classList.remove('active'));
-                    nextVideo.classList.add('active');
-                    const videoId = nextVideo.getAttribute('data-video');
-                    mainVideo.src = `https://www.youtube.com/embed/${videoId}`;
-                    nextVideo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            }
-        });
-
-        console.log('🎵 Juicy Luicy Portfolio loaded successfully!');
+        console.log('🎵 Juicy Luicy Portfolio dengan gambar YouTube asli sudah loaded!');
     </script>
 </body>
 </html>
